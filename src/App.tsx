@@ -285,9 +285,7 @@ const ExperienceSection = () => {
             这是我 <br className="lg:hidden" />
             <span className="bg-blue-400 border-2 border-black px-2 py-1">过去的经验</span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 mb-8 md:mb-10">
-            Eu pellentesque arcu ornare velit faucibus egestas gravida sed in purus enim molestie gravida imperdiet integer.
-          </p>
+
           <button className="brutal-btn">See full resume</button>
         </motion.div>
 
@@ -475,15 +473,7 @@ const AboutSection = () => {
             Welcome to <br className="lg:hidden" />
             <span className="bg-blue-400 border-2 border-black px-2 py-1">李是这个李</span>的世界！
           </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg md:text-xl text-gray-600 mb-8 md:mb-10"
-          >
-            Eu pellentesque arcu ornare velit faucibus egestas gravida sed in purus enim molestie gravida imperdiet integer.
-          </motion.p>
+  
           
           <div className="space-y-6 mb-10">
             {[  
