@@ -87,30 +87,30 @@ const EXPERIENCES: Experience[] = [
 const HOBBIES: Hobby[] = [
   {
     id: 1,
-    name: "Photography",
+    name: "摄影",
     icon: "📸",
-    description: "Capturing moments and exploring visual storytelling through the lens.",
+    description: "捕捉美好瞬间，通过镜头探索视觉故事。",
     color: "bg-brand-pink"
   },
   {
     id: 2,
-    name: "Hiking",
-    icon: "🥾",
-    description: "Exploring nature trails and finding inspiration in the great outdoors.",
+    name: "滑板",
+    icon: "🛹",
+    description: "一个不会做dropping的陆冲野生滑手，滑起来享受身体和灵魂的自由。",
     color: "bg-brand-blue"
   },
   {
     id: 3,
-    name: "Gaming",
-    icon: "🎮",
-    description: "Enjoying immersive worlds and competitive strategy games.",
+    name: "剑术",
+    icon: "⚔️",
+    description: "剑术入门2个月，努力练习手腕灵活度，强身健体；",
     color: "bg-brand-purple"
   },
   {
     id: 4,
-    name: "Cooking",
-    icon: "🍳",
-    description: "Experimenting with flavors and creating delicious meals for friends.",
+    name: "书法",
+    icon: "✍️",
+    description: "练习隶书曹全碑中，修身养性，学习传统文化。",
     color: "bg-brand-yellow"
   }
 ];
@@ -207,9 +207,21 @@ const Hero = ({ onExplore, setActiveTab }: { onExplore: () => void, setActiveTab
         >
           <h1 className="text-5xl sm:text-6xl md:text-8xl leading-tight md:leading-none mb-6 md:mb-8 text-center lg:text-left text-black">
             我是<br />
-            <span className="bg-pink-400 border-2 border-black px-2 py-1">李是这个李</span>，<br />
+            <motion.span 
+              className="bg-pink-400 border-2 border-black px-2 py-1"
+              whileHover={{ 
+                rotate: [0, 5, -5, 5, 0],
+                transition: { duration: 0.3, ease: "easeInOut" }
+              }}
+            >李是这个李</motion.span>，<br />
             A Product Manager，<br />
-            练习时长<span className="bg-blue-400 border-2 border-black px-2 py-1">六年半</span>
+            练习时长<motion.span 
+              className="bg-blue-400 border-2 border-black px-2 py-1"
+              whileHover={{ 
+                rotate: [0, -5, 5, -5, 0],
+                transition: { duration: 0.3, ease: "easeInOut" }
+              }}
+            >六年半</motion.span>
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 md:mb-10 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
             产品经理｜AI 智能体搭建｜Vibe Coding｜PMP 项目管理<br />
@@ -282,8 +294,13 @@ const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl sm:text-5xl md:text-7xl mb-6 md:mb-8 leading-tight">
-            这是我 <br className="lg:hidden" />
-            <span className="bg-blue-400 border-2 border-black px-2 py-1">过去的经验</span>
+            <motion.span 
+              className="bg-blue-400 border-2 border-black px-2 py-1"
+              whileHover={{ 
+                rotate: [0, -5, 5, -5, 0],
+                transition: { duration: 0.2, ease: "easeInOut" }
+              }}
+            >这是我的经历</motion.span>
           </h2>
 
           <button className="brutal-btn">See full resume</button>
@@ -405,7 +422,7 @@ const HobbiesSection = () => {
             <span className="highlight-pink mt-4 lg:mt-0">爱好 & 兴趣</span>
           </h2>
         <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-          When I'm not designing, you can find me exploring these passions that keep me inspired and creative.
+          不工作的时候，喜欢倒腾这些，它们让我保持热爱生活和创造力。
         </p>
       </motion.div>
 
@@ -422,7 +439,7 @@ const HobbiesSection = () => {
           >
             <div className="w-20 h-20 rounded-2xl border-4 border-black bg-black flex items-center justify-center text-4xl mb-6 brutal-border shadow-none group-hover:rotate-12 transition-transform">
               <div className={`w-full h-full rounded-xl flex items-center justify-center ${hobby.color} border-2 border-black`}>
-                {hobby.icon}
+                {hobby.id === 2 ? '🛹' : hobby.icon}
               </div>
             </div>
             <h3 className="text-2xl mb-4">{hobby.name}</h3>
