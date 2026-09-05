@@ -127,8 +127,9 @@ const Navbar = ({ activeTab, setActiveTab }: { activeTab: string, setActiveTab: 
   ];
 
   return (
-    <nav className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-2xl">
-      <div className="bg-black brutal-border rounded-full px-4 md:px-6 py-2 md:py-3 flex items-center justify-between border-white/20">
+    <>
+      <nav className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-2xl">
+        <div className="bg-black brutal-border rounded-full px-4 md:px-6 py-2 md:py-3 flex items-center justify-between border-white/20">
         <motion.div 
           whileHover={{ rotate: 180 }}
           className="flex items-center gap-2 cursor-pointer"
@@ -156,12 +157,25 @@ const Navbar = ({ activeTab, setActiveTab }: { activeTab: string, setActiveTab: 
           ))}
         </div>
 
-        <div className="flex items-center gap-2 md:gap-4">
+          <div className="flex items-center gap-2 md:gap-4">
+            <motion.a
+              href="/workspace"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="在新标签页打开甜玉米工作台"
+              whileHover={{ scale: 1.05, x: 2, y: 2 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-1.5 rounded-full border-2 border-white bg-brand-yellow px-3 py-1.5 text-sm font-bold text-black transition-colors hover:bg-white md:px-4 md:py-2"
+            >
+              <span>工作台</span>
+              <ExternalLink size={16} aria-hidden="true" />
+            </motion.a>
+          </div>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Nav */}
-      <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-full px-4">
+      <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full px-4">
         <div className="bg-white/90 backdrop-blur-md brutal-border rounded-2xl p-2 flex justify-around items-center">
           {tabs.map((tab) => (
             <button
@@ -181,7 +195,7 @@ const Navbar = ({ activeTab, setActiveTab }: { activeTab: string, setActiveTab: 
           ))}
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 

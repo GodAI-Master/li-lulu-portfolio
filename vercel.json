@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/workspace",
+      "destination": "https://sweet-corn-workspace.marypennls965.chatgpt.site/workspace"
+    },
+    {
+      "source": "/workspace/:path*",
+      "destination": "https://sweet-corn-workspace.marypennls965.chatgpt.site/workspace/:path*"
+    }
+  ]
+}
