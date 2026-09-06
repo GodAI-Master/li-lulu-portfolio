@@ -2,6 +2,10 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
+      "source": "/api/v1/wechat/push",
+      "destination": "https://sweet-corn-workspace.marypennls965.chatgpt.site/api/v1/wechat/push"
+    },
+    {
       "source": "/workspace",
       "destination": "https://sweet-corn-workspace.marypennls965.chatgpt.site/workspace"
     },
