@@ -3,15 +3,15 @@
   "rewrites": [
     {
       "source": "/api/v1/wechat/push",
-      "destination": "https://workspace-git-sites-publish-marypennls965-8723s-projects.vercel.app/api/v1/wechat/push"
+      "destination": "https://workspace-marypennls965-8723s-projects.vercel.app/api/v1/wechat/push"
     },
     {
       "source": "/workspace",
-      "destination": "https://workspace-git-sites-publish-marypennls965-8723s-projects.vercel.app/workspace"
+      "destination": "https://workspace-marypennls965-8723s-projects.vercel.app/workspace"
     },
     {
       "source": "/workspace/:path*",
-      "destination": "https://workspace-git-sites-publish-marypennls965-8723s-projects.vercel.app/workspace/:path*"
+      "destination": "https://workspace-marypennls965-8723s-projects.vercel.app/workspace/:path*"
     }
   ]
 }
